@@ -1,7 +1,7 @@
 export { default as Navigation } from "./Navigation";
 export { default as Footer } from "./Footer";
 export { default as Home } from "./Home";
-export { default as About } from "./About";
+export { default as About } from "./Browse";
 export { default as Contact } from "./Contact";
 export { default as Filter } from "./Filter"
 export { default as Filter2 } from "./Filter2"
