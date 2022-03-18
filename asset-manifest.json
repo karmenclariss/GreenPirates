@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/greenpirates/static/css/main.a246beef.css",
-    "main.js": "/greenpirates/static/js/main.67744704.js",
-    "index.html": "/greenpirates/index.html",
-    "main.a246beef.css.map": "/greenpirates/static/css/main.a246beef.css.map",
-    "main.67744704.js.map": "/greenpirates/static/js/main.67744704.js.map"
+    "main.css": "/GreenPirates/static/css/main.a246beef.css",
+    "main.js": "/GreenPirates/static/js/main.d6b590d5.js",
+    "index.html": "/GreenPirates/index.html",
+    "main.a246beef.css.map": "/GreenPirates/static/css/main.a246beef.css.map",
+    "main.d6b590d5.js.map": "/GreenPirates/static/js/main.d6b590d5.js.map"
   },
   "entrypoints": [
     "static/css/main.a246beef.css",
-    "static/js/main.67744704.js"
+    "static/js/main.d6b590d5.js"
   ]
 }
