@@ -12,7 +12,7 @@ function Navigation() {
           <div>
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/GreenPirates">
                   Home
                   <span className="sr-only">(current)</span>
                 </NavLink>
