@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/greenpirates/static/css/main.a246beef.css",
+    "main.js": "/greenpirates/static/js/main.67744704.js",
+    "index.html": "/greenpirates/index.html",
+    "main.a246beef.css.map": "/greenpirates/static/css/main.a246beef.css.map",
+    "main.67744704.js.map": "/greenpirates/static/js/main.67744704.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a246beef.css",
+    "static/js/main.67744704.js"
+  ]
+}
