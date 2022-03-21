@@ -108,6 +108,32 @@ Recycling light bulbs keeps toxic metals like mercury out of landfill, where it 
                   <Button>SEE MORE</Button>
           </NavLink>  
         </div>
+
+        <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '45vh'}}></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-4">
+            <ul> <img
+              class="thumbnail"
+              size="small"
+              src="https://blog.ijugaad.com/file/2017/02/old-jeans-e1499247390705.jpg"
+              alt=""
+              width="300"
+              height='200'
+            />
+          </ul>
+          </div>
+        <div class="col-lg-5">
+          <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Recycle old products</h4>
+          <p className style={{ textAlign: 'justify'}}>There are numerous places you can recycle your old products! 
+From Salvation Army to Minds, the possibilities are endless.
+          </p>  
+          <NavLink className="nav-link" to="/start">
+                  <Button>SEE MORE</Button>
+          </NavLink>  
+        </div>
+
+      
+        
         
         </div>
         </div>
