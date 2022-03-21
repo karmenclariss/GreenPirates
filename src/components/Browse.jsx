@@ -1,5 +1,4 @@
 import React from "react";
-
 function Browse() {
   return (
     <div className="browse">
@@ -10,7 +9,36 @@ function Browse() {
      
         
       <div class ="row">
-        <div class="col-lg-3">Filter</div>
+        <div class="col-lg-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Old Products
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              E-waste
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Lighting waste
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Cash for trash
+            </label>
+          </div>
+        </div>
+
         <div class="col-lg-4">
             <ul> <img
               class="thumbnail"
