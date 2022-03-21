@@ -39,7 +39,7 @@ function Filter() {
                   </div> 
 
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
-                    <ul><NavLink className="nav-link" to="/about" >Or find out more </NavLink></ul>
+                    <ul><NavLink className="nav-link" to="/browse" >Or find out more </NavLink></ul>
                   </div> 
                   </div>
                 </div>    

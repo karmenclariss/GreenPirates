@@ -16,6 +16,7 @@ import {
   Account,
   Filter,
   Filter2,
+  Ewaste,
 } from "./components";
 
 ReactDOM.render(
@@ -34,6 +35,7 @@ ReactDOM.render(
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />
       </Route>
+      <Route path="/ewaste" element={<Ewaste/>} />
     </Routes>
     <Footer />
   </Router>,
