@@ -7,12 +7,13 @@ import {
   Navigation,
   Footer,
   Home,
-  About,
+  Browse,
   Contact,
   Forum,
   Posts,
   Post,
   Profile,
+  Account,
   Filter,
   Filter2,
 } from "./components";
@@ -23,11 +24,12 @@ ReactDOM.render(
     <Routes>
      <Route path="/" element={<Home />} />
       <Route path="/GreenPirates" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/browse" element={<Browse />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/start" element={<Filter />} />
       <Route path="/start2" element={<Filter2 />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/account" element={<Account />} />
       <Route path="/forum" element={<Forum />}>
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />
