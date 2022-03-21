@@ -1,4 +1,6 @@
 import React from "react";
+import Login from './Login';
+import Logout from './Logout';
 import { NavLink } from "react-router-dom";
 
 function Navigation() {
@@ -37,9 +39,15 @@ function Navigation() {
                   Profile
                 </NavLink>
               </div>
-
             </ul>
+    
           </div>
+
+          <div className="GoogleLogin">
+            <Login />
+            <Logout />
+          </div>
+
         </div>
       </nav>
     </div>
