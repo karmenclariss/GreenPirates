@@ -4,7 +4,7 @@ function Contact() {
   return (
     <div className="contact">
       <div class="container">
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh'}}>
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '25vh'}}>
         <h1 class="font-weight-light">Contact Us</h1>
       </div>
         <div class="row align-items-center my-5">

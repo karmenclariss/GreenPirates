@@ -12,7 +12,38 @@ function Browse() {
      
         
       <div class ="row">
-        <div class="col-lg-3">Filter</div>
+        
+        <div class="col-lg-3">
+        <h4>Filter</h4>
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Old Products
+            </label>
+          </div>
+
+           <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              E-waste
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Lighting waste
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Cash for trash
+            </label>
+          </div>
+          </div>
+
         <div class="col-lg-4">
             <ul> <img
               class="thumbnail"
@@ -46,32 +77,39 @@ function Browse() {
           </ul>
           </div>
         <div class="col-lg-5">
-          <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Recycle lighting waste today</h4>
-          <p className style={{ textAlign: 'justify'}}>IT devices and equipment contain toxic substances like lead, mercury, cadmium, polybrominated flame retardants, barium and lithium. If not properly handled, these toxic substances can leach into soil or pollute our air and water supplies. It is thus vital that end-of-life IT equipment be only handled by trusted, professional recycling companies like METech.</p>  
+          <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Recycle Lighting Waste today</h4>
+          <p className style={{ textAlign: 'justify'}}>Lighting recycling is getting easier
+Recycling light bulbs keeps toxic metals like mercury out of landfill, where it can contaminate the environment and waterways. It also recovers a variety of materials such as glass, ceramic, aluminium and phosphor that can be reused in products like aluminium cans and fertiliser.</p>  
           <NavLink className="nav-link" to="/start">
                   <Button>SEE MORE</Button>
-          </NavLink>
+          </NavLink>  
         </div>
 
           
-        <div class="col-lg-5">Activities</div>
+        
+        <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '45vh'}}></div>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-4">
+            <ul> <img
+              class="thumbnail"
+              size="small"
+              src="https://www.sciencenewsforstudents.org/wp-content/uploads/2020/12/1030_recycling_clothes.jpg"
+              alt=""
+              width="300"
+              height='200'
+            />
+          </ul>
+          </div>
+        <div class="col-lg-5">
+          <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Cash For Trash</h4>
+          <p className style={{ textAlign: 'justify'}}>Cash-for-Trash is an incentive programme by Public Waste Collectors, where residents may bring their recyclables to the Cash-for-Trash stations and cash is given in exchange for recyclables. For more information on the rebates, please contact your Public Waste Collector.
+          </p>  
+          <NavLink className="nav-link" to="/start">
+                  <Button>SEE MORE</Button>
+          </NavLink>  
+        </div>
         
         </div>
-          {/* <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div> */}
         </div>
       </div>
 
