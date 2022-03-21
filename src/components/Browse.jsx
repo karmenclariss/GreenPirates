@@ -1,8 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Browse() {
+  /** NEW FILTERED HOTEL STATE  **/
+  const [Activities, setNewActivity] = useState([]);
+  const [handleCheck, setHandleCheck] = useState({});
+   
+
+    const handleChange =  (e) => {
+           setHandleCheck({...handleCheck, [e.target.name]: e.target.checked})
+       }
+
+      useEffect(() => {
+        function filterbyName (value) {
+            if (handleCheck !== undefined) {
+                let filterKeys = ['E-waste', 'Lighting waste', 'Cash for trash', 'Old clothes'];
+        
+                return filterKeys.every(function(key) {
+                    return !handleCheck[key] || value[key];
+                });
+            } else {
+                return value;
+            }
+        }
+        
+     
+      //  setNewActivity(
+      //      Browse.filter(filterbyName)
+      //  )
+      });
+
+
   return (
     <div className="browse">
       <div class="container">
@@ -16,20 +46,13 @@ function Browse() {
         <div class="col-lg-3">
         <h4>Filter</h4>
          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-            <label class="form-check-label" for="flexCheckDefault">
-              Old Products
-            </label>
-          </div>
-
-           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onChange={handleChange}/>
             <label class="form-check-label" for="flexCheckDefault">
               E-waste
             </label>
           </div>
 
-          <div class="form-check">
+           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
             <label class="form-check-label" for="flexCheckDefault">
               Lighting waste
@@ -40,6 +63,13 @@ function Browse() {
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
             <label class="form-check-label" for="flexCheckDefault">
               Cash for trash
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Old Products
             </label>
           </div>
           </div>
