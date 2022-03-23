@@ -1,5 +1,4 @@
 const express = require('express');
-const { route } = require('express/lib/application');
 const router = express.Router()
 const Thread = require('../models/threadModel')
 
@@ -17,6 +16,19 @@ router.route('/create').post((req,res) =>{
 router.route('/threads').get((req,res) =>{
     Thread.find()
         .then(foundThread => res.json(foundThread))
+})
+
+router.route('/threads/:id').get((req,res) =>{
+    const id = req.params.id
+    Thread.findById(id, (err,thread) =>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            console.log(thread)
+            res.json(thread)
+        }
+    })
 })
 
 module.exports = router

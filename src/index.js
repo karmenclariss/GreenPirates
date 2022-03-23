@@ -17,6 +17,8 @@ import {
   Filter,
   Filter2,
   Ewaste,
+  CreatePost,
+  Thread
 } from "./components";
 
 ReactDOM.render(
@@ -35,6 +37,8 @@ ReactDOM.render(
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />
       </Route>
+      <Route path="/createPost" element={<CreatePost/>} />
+      <Route path="/thread/:id" element={<Thread/>} />
       <Route path="/ewaste" element={<Ewaste/>} />
     </Routes>
     <Footer />
