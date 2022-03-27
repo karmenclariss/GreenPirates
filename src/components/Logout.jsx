@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoogleLogout } from 'react-google-login';
 
 const clientId = '117544908001-7f5kmi4cov63hdfugrhitc7prub2nrer.apps.googleusercontent.com' ;
 
 function Logout() {
+
+    const[showLogoutButton, setShowLogoutButton] = useState(false);
+
     const onSuccess = () => {
         alert('Logout made successfully!');
     };
