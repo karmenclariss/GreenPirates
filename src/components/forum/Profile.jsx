@@ -2,7 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+
 function Profile() {
+
   return (
     <div className="about">
       <div class="container">
