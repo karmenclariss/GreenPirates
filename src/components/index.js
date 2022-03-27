@@ -10,3 +10,6 @@ export { default as Forum } from "./forum/Forum";
 export { default as Posts } from "./forum/Posts";
 export { default as Post } from "./forum/Post";
 export { default as Account } from "./Account";
+export { default as Ewaste } from "./activity/Ewaste";
+export { default as CreatePost } from "./forum/CreatePost";
+export { default as Thread } from "./forum/Thread";

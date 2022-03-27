@@ -1,8 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Browse() {
+  // /** NEW FILTERED HOTEL STATE  **/
+  // const [Activities, setNewActivity] = useState([]);
+  // const [handleCheck, setHandleCheck] = useState({});
+   
+
+  //   const handleChange =  (e) => {
+  //          setHandleCheck({...handleCheck, [e.target.name]: e.target.checked})
+  //      }
+
+  //     useEffect(() => {
+  //       function filterbyName (value) {
+  //           if (handleCheck !== undefined) {
+  //               let filterKeys = ['E-waste', 'Lighting waste', 'Cash for trash', 'Old clothes'];
+        
+  //               return filterKeys.every(function(key) {
+  //                   return !handleCheck[key] || value[key];
+  //               });
+  //           } else {
+  //               return value;
+  //           }
+  //       }
+        
+     
+  //     //  setNewActivity(
+  //     //      Browse.filter(filterbyName)
+  //     //  )
+  //     });
+
+
   return (
     <div className="browse">
       <div class="container">
@@ -18,18 +48,11 @@ function Browse() {
          <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
             <label class="form-check-label" for="flexCheckDefault">
-              Old Products
-            </label>
-          </div>
-
-           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-            <label class="form-check-label" for="flexCheckDefault">
               E-waste
             </label>
           </div>
 
-          <div class="form-check">
+           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
             <label class="form-check-label" for="flexCheckDefault">
               Lighting waste
@@ -40,6 +63,13 @@ function Browse() {
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
             <label class="form-check-label" for="flexCheckDefault">
               Cash for trash
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+            <label class="form-check-label" for="flexCheckDefault">
+              Old Products
             </label>
           </div>
           </div>
@@ -58,7 +88,7 @@ function Browse() {
         <div class="col-lg-5">
           <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Recycle E-Waste today</h4>
           <p className style={{ textAlign: 'justify'}}>IT devices and equipment contain toxic substances like lead, mercury, cadmium, polybrominated flame retardants, barium and lithium. If not properly handled, these toxic substances can leach into soil or pollute our air and water supplies. It is thus vital that end-of-life IT equipment be only handled by trusted, professional recycling companies like METech.</p>  
-          <NavLink className="nav-link" to="/start">
+          <NavLink className="nav-link" to="/ewaste">
                   <Button>SEE MORE</Button>
           </NavLink>
         </div>
