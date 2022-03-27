@@ -18,7 +18,8 @@ import {
   Filter2,
   Ewaste,
   CreatePost,
-  Thread
+  Thread,
+  Map
 } from "./components";
 
 ReactDOM.render(
@@ -40,6 +41,7 @@ ReactDOM.render(
       <Route path="/createPost" element={<CreatePost/>} />
       <Route path="/thread/:id" element={<Thread/>} />
       <Route path="/ewaste" element={<Ewaste/>} />
+      <Route path="/map" element={<Map />} />
     </Routes>
     <Footer />
   </Router>,
