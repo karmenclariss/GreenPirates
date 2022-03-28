@@ -45,7 +45,6 @@ function Navigation() {
 
           <div className="GoogleLogin">
             <Login />
-            <Logout />
           </div>
 
         </div>
