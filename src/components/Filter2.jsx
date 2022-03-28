@@ -28,6 +28,7 @@ function Filter2() {
             {/* <ul><Button2>Or Use Current Location</Button2></ul> */}
             <NavLink className="nav-link" to="/map" ><Button2>Or use current location</Button2></NavLink>
           </div>
+          {/* hi */}
           {/* 
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
                     <ul><NavLink className="nav-link" to="/about" >Or use current location </NavLink></ul>
