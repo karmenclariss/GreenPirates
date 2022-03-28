@@ -7,8 +7,8 @@ import mapStyles from "./mapStyles";
 
 const libraries = ["places"];
 const mapContainerStyle = {
-    width: "98.93vw",
-    height: "85vh",
+    width: "100vw",
+    height: "100vh",
 };
 const center = {
     lat: 1.3521,

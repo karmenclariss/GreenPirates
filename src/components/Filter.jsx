@@ -13,7 +13,7 @@ function Filter() {
   // }
     return (
         <div style={{ 
-          backgroundImage: `url("https://wallup.net/wp-content/uploads/2017/03/28/361576-leaves-water_drops-blurred-photography-nature-green.jpg")`,
+          backgroundImage: `url("https://wallup.net/wp-content/uploads/2017/03/28/361576-leaves-water_drops-blurred-photography-nature-green.jpg")`, 
           display: 'flex',justifyContent:'center', alignItems:'center', height: '100vh'
         }}>
         <div className="filter">

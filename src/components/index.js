@@ -11,7 +11,9 @@ export { default as Posts } from "./forum/Posts";
 export { default as Post } from "./forum/Post";
 export { default as Account } from "./Account";
 export { default as Ewaste } from "./activity/Ewaste";
+export { default as LightingWaste} from "./activity/LightingWaste";
+export { default as Cash} from "./activity/Cash";
+export { default as OldProducts} from "./activity/OldProducts";
 export { default as CreatePost } from "./forum/CreatePost";
 export { default as Thread } from "./forum/Thread";
 export { default as Map } from "./map/Map";
-// hi

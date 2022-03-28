@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import ReactDOM from 'react-dom';
 
 const clientId = '858483949458-3jg43uscn0isammqoqahek7jk6rvdf09.apps.googleusercontent.com';
 
 function Login(){
 
-    const[showLoginButton, setShowLoginButton]= useState(true);
+    
     const[showLogoutButton, setShowLogoutButton] = useState(false);
-
+    const[showLoginButton, setShowLoginButton]= useState(true);
+    
     const onLoginSuccess = (res) => {
         console.log('[Login Success] currentUser:', res.profileObj);
         setShowLoginButton(false);
@@ -46,8 +48,11 @@ function Login(){
                 </GoogleLogout> : null
             } 
         </div>
+        
 
     );
+    
 };
+
 
 export default Login;

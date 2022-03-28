@@ -36,7 +36,7 @@ function Browse() {
   return (
     <div className="browse">
       <div class="container">
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '25vh'}}>
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '20vh'}}>
         <h1 class="font-weight-light">Activities</h1>
       </div>
      
@@ -99,7 +99,7 @@ function Browse() {
             <ul> <img
               class="thumbnail"
               size="small"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzaVclbMGoINgjgtXPPPujyBH1OJUb7gXLZQ&usqp=CAU"
+              src="https://cdn.vox-cdn.com/thumbor/621Xh7QwY6EMEs8nL2dlhZ_hDuw=/0x0:5171x3447/1200x800/filters:focal(2173x1311:2999x2137)/cdn.vox-cdn.com/uploads/chorus_image/image/65178250/hue_edison.0.jpg"
               alt=""
               width="300"
               height='200'
@@ -110,7 +110,7 @@ function Browse() {
           <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Recycle Lighting Waste today</h4>
           <p className style={{ textAlign: 'justify'}}>Lighting recycling is getting easier
 Recycling light bulbs keeps toxic metals like mercury out of landfill, where it can contaminate the environment and waterways. It also recovers a variety of materials such as glass, ceramic, aluminium and phosphor that can be reused in products like aluminium cans and fertiliser.</p>  
-          <NavLink className="nav-link" to="/start">
+          <NavLink className="nav-link" to="/lightingwaste">
                   <Button>SEE MORE</Button>
           </NavLink>  
         </div>
@@ -134,7 +134,7 @@ Recycling light bulbs keeps toxic metals like mercury out of landfill, where it 
           <h4 className style={{ fontFamily: "Arial", fontWeight: 'normal'}}>Cash For Trash</h4>
           <p className style={{ textAlign: 'justify'}}>Cash-for-Trash is an incentive programme by Public Waste Collectors, where residents may bring their recyclables to the Cash-for-Trash stations and cash is given in exchange for recyclables. For more information on the rebates, please contact your Public Waste Collector.
           </p>  
-          <NavLink className="nav-link" to="/start">
+          <NavLink className="nav-link" to="/cash">
                   <Button>SEE MORE</Button>
           </NavLink>  
         </div>
@@ -157,7 +157,7 @@ Recycling light bulbs keeps toxic metals like mercury out of landfill, where it 
           <p className style={{ textAlign: 'justify'}}>There are numerous places you can recycle your old products! 
 From Salvation Army to Minds, the possibilities are endless.
           </p>  
-          <NavLink className="nav-link" to="/start">
+          <NavLink className="nav-link" to="/oldproducts">
                   <Button>SEE MORE</Button>
           </NavLink>  
         </div>

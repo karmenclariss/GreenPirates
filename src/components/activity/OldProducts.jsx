@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-function Ewaste() {
+function OldProducts() {
   return (
 
     <div className="browse">
@@ -14,8 +14,8 @@ function Ewaste() {
     
         <div class="col-lg-13">
         <ul> <img
-              id = "img1"
-              src = {require("./img1.jpg")}
+              id = "img2"
+              src = {require("./img4.png")}
               alt="" 
               width="975"
               height='200'
@@ -24,8 +24,8 @@ function Ewaste() {
         </div>
         <div class="col-lg-6">
         <div >
-        <h1 style ={{fontFamily:'Arial',fontWeight:'normal'}}> E-Waste Recycling</h1>
-        <p style ={{textAlign:'justify'}}>IT devices and equipment contain toxic substances like lead, mercury, cadmium, polybrominated flame retardants, barium and lithium. If not properly handled, these toxic substances can leach into soil or pollute our air and water supplies. It is thus vital that end-of-life IT equipment be only handled by trusted, professional recycling companies like METech to ensure that there is proper recycling of the IT equipment.</p>
+        <h1 style ={{fontFamily:'Arial',fontWeight:'normal'}}> Old Products</h1>
+        <p style ={{textAlign:'justify'}}>Recycling is one of the great ways to recycle old items that usually end up in our trash bin. According to a report by Duke University, “Approximately 55% of 220 million tons of waste generated each year in the United States ends up in one of the over 3,500 landfills”. Landfills not only have a bad impact on our environment but also degrade the beauty of the city. By recycling not-so-common items at our home, we can play a small but huge part in protecting the environment and regaining the glory of our city.</p>
         </div>
         </div>
         <div class="col-lg-6">
@@ -33,16 +33,14 @@ function Ewaste() {
                   <Button>FIND A LOCATION NEAR ME</Button>
             </NavLink>
             <ul>
-            &#128222; +65 3105 1608
+            &#128187; https://www.nea.gov.sg/
             </ul>
             <ul>
-            &#128187; https://alba-ewaste.sg/
+            &#9978; (Office) PRS Operator’s Depot (20 Tuas Loop)<br></br>
             </ul>
-            <ul>
-            &#9978;(Office) 110 Tuas South Avenue 3<br></br>
-            S(637369)<br></br>
-            #03-11
-            </ul>
+
+
+
 
         </div>
     
@@ -68,4 +66,4 @@ const Button = styled.button`
   font-family: Arial;
 `;
 
-export default Ewaste;
+export default OldProducts;
