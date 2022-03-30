@@ -1,9 +1,9 @@
 import React from "react";
 import Login from './Login';
-import Logout from './Logout';
 import { NavLink } from "react-router-dom";
 
 function Navigation() {
+  
   return (
     <div className="navigation">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,7 +35,7 @@ function Navigation() {
                 </NavLink>
               </li>
               <div>
-                <NavLink className="nav-link" to="/profile">
+                <NavLink className="nav-link" to="/login">
                   Profile
                 </NavLink>
               </div>
@@ -43,9 +43,9 @@ function Navigation() {
     
           </div>
 
-          <div className="GoogleLogin">
+          {/* <div className="g-login">
             <Login />
-          </div>
+          </div> */}
 
         </div>
       </nav>

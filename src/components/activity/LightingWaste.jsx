@@ -30,7 +30,7 @@ Recycling light bulbs keeps toxic metals like mercury out of landfill, where it 
         </div>
         </div>
         <div class="col-lg-6">
-            <NavLink className="nav-link" to="/map">
+            <NavLink className="nav-link" to="/maplwaste">
                   <Button>FIND A LOCATION NEAR ME</Button>
             </NavLink>
             <ul>

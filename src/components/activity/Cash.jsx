@@ -31,7 +31,7 @@ function Cash() {
         </div>
         </div>
         <div class="col-lg-6">
-            <NavLink className="nav-link" to="/map">
+            <NavLink className="nav-link" to="/map2ndhand">
                   <Button>FIND A LOCATION NEAR ME</Button>
             </NavLink>
             <ul>
