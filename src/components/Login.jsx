@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
-import ReactDOM from 'react-dom';
+import Profile from './forum/Profile';
+//import { refreshTokenSetup } from '../utils/refreshTokenSetup';
 
 const clientId = '858483949458-3jg43uscn0isammqoqahek7jk6rvdf09.apps.googleusercontent.com';
 
 function Login(){
 
-    
-    const[showLogoutButton, setShowLogoutButton] = useState(false);
     const[showLoginButton, setShowLoginButton]= useState(true);
+    const[showLogoutButton, setShowLogoutButton] = useState(false);
+    const[name,setName] = useState('');
+    const[photoUrl,setPhoto] = useState('');
+    const[email,setEmail] = useState('');
     
     const onLoginSuccess = (res) => {
         console.log('[Login Success] currentUser:', res.profileObj);
         setShowLoginButton(false);
         setShowLogoutButton(true);
+        setName(res.profileObj.name);
+        setPhoto(res.profileObj.imageUrl);
+        setEmail(res.profileObj.email);
     };
+
     const onLoginFailure = (res) => {
         console.log('[Login failed] res:', res);
     };
@@ -22,6 +29,9 @@ function Login(){
         alert('Logout made successfully!');
         setShowLoginButton(true);
         setShowLogoutButton(false);
+        setName('');
+        setPhoto('');
+        setEmail('');
     };
     
     return (
@@ -38,15 +48,17 @@ function Login(){
                     isSignedIn={true}
                 /> : null
             }
-
             { showLogoutButton ?
                 <GoogleLogout
                     clientId={clientId}
                     buttonText="Logout"
                     onLogoutSuccess={onLogoutSuccess}
                 >
-                </GoogleLogout> : null
+                </GoogleLogout> :null
             } 
+            { showLogoutButton ?
+                <Profile name={name} photo={photoUrl} email={email} /> :null
+            }
         </div>
         
 
