@@ -20,9 +20,11 @@ import {
   LightingWaste,
   CreatePost,
   Thread,
-  Map,
   Cash,
   OldProducts,
+  MapEwaste,
+  MapLwaste,
+  Map2ndHand,
 } from "./components";
 
 ReactDOM.render(
@@ -47,7 +49,9 @@ ReactDOM.render(
       <Route path="/lightingwaste" element={<LightingWaste/>} />
       <Route path="/cash" element={<Cash/>} />
       <Route path="/OldProducts" element={<OldProducts/>} />
-      <Route path="/map" element={<Map />} />
+      <Route path="/mapewaste" element={<MapEwaste />} />
+      <Route path="/maplwaste" element={<MapLwaste />} />
+      <Route path="/map2ndhand" element={<Map2ndHand />} />
     </Routes>
     <Footer />
   </Router>,

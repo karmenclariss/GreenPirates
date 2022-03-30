@@ -25,8 +25,8 @@ function Filter2() {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
-            {/* <ul><Button2>Or Use Current Location</Button2></ul> */}
-            <NavLink className="nav-link" to="/map" ><Button2>Or use current location</Button2></NavLink>
+            <ul><Button2>Or Use Current Location</Button2></ul>
+            {/* <NavLink className="nav-link" to="/maplwaste" ><Button2>Or use current location</Button2></NavLink> */}
           </div>
           {/* 
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
