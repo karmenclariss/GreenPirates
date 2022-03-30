@@ -8,6 +8,7 @@ function CreatePost(){
         title:'',
         content:''
     })
+    const isTextareaDisabled = (input.content.length===0 || input.title.length===0)
 
     function handleChange(event){
         const {name, value} = event.target;
@@ -25,21 +26,21 @@ function CreatePost(){
             title: input.title,
             content: input.content
         }
-        axios.post('http://localhost:3001/create', newThread)
+        axios.post('http://localhost:3001/api/thread/createThread', newThread)
         navigate('/forum')
     }
 
     return(
         <div className="container">
-            <h1>New Post</h1>
+            <h1 className="thread-form-title">New Post</h1>
             <form>
                 <div class="form-group">
-                    <input onChange={handleChange} name="title" value={input.title} autoComplete="off" className="form-control" placeholder="Insert title here"></input>
+                    <input onChange={handleChange} name="title" value={input.title} autoComplete="off" className="title-form-textarea" placeholder="Insert title here"></input>
                 </div>
                 <div class="form-group">
-                    <textarea onChange={handleChange} name="content" value={input.content} autoComplete="off" className="form-control" placeholder="Insert content here"></textarea>
+                    <textarea onChange={handleChange} name="content" value={input.content} autoComplete="off" className="comment-form-textarea" placeholder="Insert content here"></textarea>
                 </div>
-                <button  onClick={handleClick} className="btn btn-lg btn-info">Create Thread</button>
+                <button  onClick={handleClick} className="btn btn-lg btn-info" disabled={isTextareaDisabled}>Create Thread</button>
             </form>
         </div>
     )

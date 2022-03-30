@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"; //To handle change, need to track the state of the input
 import {Link} from "react-router-dom";
+import Pagination from './Pagination';
 
 function Forum(){
 
@@ -8,8 +9,12 @@ function Forum(){
         content:''
     }])
 
+    const[pageNumber,setPageNumber] = useState(1)
+    const[postPerPage] = useState(10)
+
     useEffect(() =>{
-        fetch('/threads').then(res =>{
+        fetch('/api/thread/getThread')
+         .then(res =>{
             if(res.ok){
                 return res.json()
             }
@@ -17,16 +22,26 @@ function Forum(){
         .then(jsonRes => setThreads(jsonRes))
     }, [])
 
+    const indexOfLastPost = pageNumber * postPerPage
+    const indexOfFirstPost = indexOfLastPost - postPerPage
+    const currentPosts = threads.slice(indexOfFirstPost, indexOfLastPost)
+    
+    function paginate(pageNumber){
+        setPageNumber(pageNumber)
+    }
+
     return <div className="item-container">
         <h1>Current Threads</h1>
         <Link to="/createPost" className="btn btn-primary">Create Post</Link>
-        {threads.map((thread) =>(
-            <div key={String(thread._id)}>
-                <Link to={`/thread/${String(thread._id)}`}>{thread.title}</Link>
-                <p>{thread.content}</p>
+        {currentPosts.map((currentPosts) =>(
+            <div key={String(currentPosts._id)}>
+                <Link to={`/thread/${String(currentPosts._id)}`}>{currentPosts.title}</Link>
+                <p>{currentPosts.content}</p>
             </div>
         ))}
+        <Pagination postPerPage={postPerPage} totalPosts={threads.length} paginate={paginate}/> 
         </div>
+        
 
 }
 
