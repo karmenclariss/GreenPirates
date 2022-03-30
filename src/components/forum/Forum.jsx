@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"; //To handle change, need to track the state of the input
 import {Link} from "react-router-dom";
+import Pagination from './Pagination';
 
 
 function Forum(){
@@ -9,14 +10,26 @@ function Forum(){
         content:''
     }])
 
+    const[pageNumber,setPageNumber] = useState(1)
+    const[postPerPage] = useState(10)
+
     useEffect(() =>{
-        fetch('/threads').then(res =>{
+        fetch('/api/thread/getThread')
+         .then(res =>{
             if(res.ok){
                 return res.json()
             }
         })
         .then(jsonRes => setThreads(jsonRes))
     }, [])
+
+    const indexOfLastPost = pageNumber * postPerPage
+    const indexOfFirstPost = indexOfLastPost - postPerPage
+    const currentPosts = threads.slice(indexOfFirstPost, indexOfLastPost)
+    
+    function paginate(pageNumber){
+        setPageNumber(pageNumber)
+    }
 
     return(
         <div class="container">
@@ -34,7 +47,7 @@ function Forum(){
         </div>
 
         <div class="container">
-        {threads.map((thread) =>(
+        {currentPosts.map((thread) =>(
 
             <div key={String(thread._id)}>
               <h3 style ={{fontFamily:'Arial',fontWeight:'bold'}}> 
@@ -43,6 +56,7 @@ function Forum(){
                 <p>{thread.content}</p>
             </div>
         ))}
+        <Pagination postPerPage={postPerPage} totalPosts={threads.length} paginate={paginate}/> 
         </div>
         </div>
       </div>
