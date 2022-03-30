@@ -37,9 +37,9 @@ function Filter() {
                     {/* <ul><Button>Recycling lighting waste</Button></ul> */}
                     <NavLink className="nav-link" to="/maplwaste" ><ul><Button>Recycling lighting waste</Button></ul></NavLink>
                   </div> 
-                  <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
+                  {/* <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
                     <ul><NavLink className="nav-link" to="/start2"><Button2>Next</Button2></NavLink></ul>
-                  </div> 
+                  </div>  */}
 
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
                     <ul><NavLink className="nav-link" to="/browse" >Or find out more </NavLink></ul>

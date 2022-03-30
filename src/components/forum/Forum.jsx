@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"; //To handle change, need to track the state of the input
 import {Link} from "react-router-dom";
 
+
 function Forum(){
 
     const [threads, setThreads] = useState([{
