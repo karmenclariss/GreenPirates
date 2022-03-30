@@ -18,7 +18,8 @@ import {
   Filter2,
   Ewaste,
   CreatePost,
-  Thread
+  Thread,
+  Login
 } from "./components";
 
 ReactDOM.render(
@@ -33,6 +34,7 @@ ReactDOM.render(
       <Route path="/start2" element={<Filter2 />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/account" element={<Account />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/forum" element={<Forum />}>
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />

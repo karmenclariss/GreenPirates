@@ -1,24 +1,27 @@
 import React from "react";
+import Login from '../Login';
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 
-function Profile() {
-
+function Profile(props) {
+  console.log(props.profileObj);
+  console.log(props.hello);
   return (
     <div className="about">
       <div class="container">
         <div class="row align-items-center my-5">
-          <div class="col-lg-3">
+          <div class="col-lg-2">
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
+              src={props.photo}
               alt=""
             />
           </div>
           <div class="col-lg-6">
             <h1 class="font-weight-bold">Profile</h1>
-            <h2 class="font-weight-light">@username</h2>
+            <h2 class="font-weight-light">{props.name}</h2>
+            <h4 class="font-weight-light">{props.email}</h4>
             <NavLink className="nav-link" to="/account">
                   <Button>EDIT ACCOUNT</Button>
             </NavLink>
