@@ -10,8 +10,8 @@ import {
   Browse,
   Contact,
   Forum,
-  Posts,
-  Post,
+  // Posts,
+  // Post,
   Profile,
   Account,
   Login,
@@ -43,10 +43,10 @@ ReactDOM.render(
       <Route path="/account" element={<Account />} />
       <Route path="/login" element={<Login />} />
       <Route path="/notlogin" element={<NotLoggedIn/>} />
-      <Route path="/forum" element={<Forum />}>
-        <Route path="" element={<Posts />} />
-        <Route path=":postSlug" element={<Post />} />
-      </Route>
+      <Route path="/forum" element={<Forum />}/>
+        {/* <Route path="" element={<Posts />} />
+        <Route path=":postSlug" element={<Post />} /> */}
+      {/* </Route> */}
       <Route path="/createPost" element={<CreatePost/>} />
       <Route path="/thread/:id" element={<Thread/>} />
       <Route path="/ewaste" element={<Ewaste/>} />
@@ -64,4 +64,4 @@ ReactDOM.render(
 );
 
 serviceWorker.unregister();
-// hi
+

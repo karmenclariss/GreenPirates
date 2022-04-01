@@ -5,11 +5,13 @@ function NotLoggedIn() {
   return (
     <div className="NotLoggedIn">
       <div class="container" >
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '15vh'}}>	
+      <h1>	&#128680;</h1></div>
       <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh'}}>
-        <h1 class="font-weight-light">You are not logged in.</h1>
+        <h2 class="font-weight-bold"> You are not logged in. </h2>
       </div>
-      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '1vh'}}>
-        Please log in to continue.
+      <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh'}}>
+         Please log in to continue.
       </div>
  
       </div>
