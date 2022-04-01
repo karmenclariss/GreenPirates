@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Profile from './forum/Profile';
+import NotLoggedIn from './forum/NotLoggedIn';
 //import { refreshTokenSetup } from '../utils/refreshTokenSetup';
 
 const clientId = '858483949458-3jg43uscn0isammqoqahek7jk6rvdf09.apps.googleusercontent.com';
@@ -36,7 +37,16 @@ function Login(){
     
     return (
         <div>
+            <div class="container">
+                 <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '20vh'}}>
+                <h1 class="font-weight-light">Profile</h1>
+             </div>
+            </div>
             { showLoginButton ?
+                <NotLoggedIn/> :null
+            }
+            { showLoginButton ?
+                <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '20vh'}}>
                 <GoogleLogin
                     disabled={false}
                     clientId={clientId}
@@ -46,20 +56,27 @@ function Login(){
                     cookiePolicy={'single_host origin'}
                     style={{ marginTop: '100px' }}
                     isSignedIn={true}
-                /> : null
+                /> 
+                </div>
+                : null
             }
             { showLogoutButton ?
+                <Profile name={name} photo={photoUrl} email={email} /> :null
+            }
+            { showLogoutButton ?
+                <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}>
                 <GoogleLogout
                     clientId={clientId}
                     buttonText="Logout"
                     onLogoutSuccess={onLogoutSuccess}
                 >
-                </GoogleLogout> :null
+                </GoogleLogout> 
+                </div>
+                :null
             } 
-            { showLogoutButton ?
-                <Profile name={name} photo={photoUrl} email={email} /> :null
-            }
+
         </div>
+        
         
 
     );
