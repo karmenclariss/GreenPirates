@@ -2,7 +2,6 @@ import React , {useEffect,useState} from 'react'
 import SingleComment from './SingleComment'
 
 function ReplyComment(props) {
-
     var [ChildCommentNumber, setChildCommentNumber] = useState(0)
     const [OpenReplyComments, setOpenReplyComments] = useState(false)
     
@@ -14,19 +13,19 @@ function ReplyComment(props) {
             }
         })
         setChildCommentNumber(commentNumber)
-        console.log(ChildCommentNumber)
     }, [props.CommentLists,props.parentCommentId])
     
     
 
     let renderReplyComment = (parentCommentId) =>
         props.CommentLists.map((comment,index) =>(
-            <React.Fragment>
+            <React.Fragment key={index}>
                 {comment.responseTo === parentCommentId && 
                     <div className='child-comment-width'>
-                    <SingleComment comment={comment} threadId={props.threadId} refreshFunction={props.refreshFunction}/>
-                    <ReplyComment CommentLists={props.CommentLists} parentCommentId={comment._id} threadId={props.threadId}
-                        refreshFunction={props.refreshFunction}/>
+                        <SingleComment CommentLists={props.CommentLists} comment={comment} threadId={props.threadId} 
+                            refreshFunction={props.refreshFunction}/>
+                        <ReplyComment CommentLists={props.CommentLists} parentCommentId={comment._id} threadId={props.threadId}
+                            refreshFunction={props.refreshFunction}/>
                     </div>
                 }
             </React.Fragment>
@@ -35,7 +34,6 @@ function ReplyComment(props) {
     function handleChange(event){
         event.preventDefault()
         setOpenReplyComments(!OpenReplyComments)
-        console.log(`There are ${ChildCommentNumber}`)
         setChildCommentNumber(ChildCommentNumber++)
     }
     return (

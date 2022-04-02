@@ -14,7 +14,6 @@ function Thread(){
     const threadId = {
         threadId:id
     }
-
     useEffect(() =>{
         fetch(`http://localhost:3001/api/thread/${id}`)
          .then((res) =>{
@@ -49,7 +48,7 @@ function Thread(){
     <div>
         <h2>{data.title}</h2>
         <p>{data.content}</p>
-        <Comments CommentLists={CommentLists} refreshFunction={updateComment} key={id}/>
+        <Comments CommentLists={CommentLists} refreshFunction={updateComment} />
     </div>
     )
 }
