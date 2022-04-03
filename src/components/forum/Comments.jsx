@@ -37,10 +37,26 @@ function Comments(props) {
         })
         
     }
-
+    const mystyle = {
+        color: "white",
+        backgroundColor: "black",
+        padding: "8px",
+        border: "1.8px solid #555555",
+        borderRadius: "10px"
+      };
     return(
         <div>
             <br/>
+            {/* Root Comment Form */}
+            <form>
+                <div class="form-group">
+                    <input onChange={handleChange} name="comment" value={input.comment} autoComplete="off" 
+                        className="comment-form-textarea" placeholder="Penny for your thoughts?"/>
+                </div> 
+                <button style={mystyle} onClick={handleClick} className="comment-form-button"
+                     disabled={isTextareaDisabled}>Comment</button>
+            </form>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '3vh' }}></div>
             <p className='thread-form-title'> Comments </p>
             {props.CommentLists && props.CommentLists.map((comment,index) => (
             (!comment.responseTo && 
@@ -54,15 +70,6 @@ function Comments(props) {
                 </React.Fragment>
             )))}
 
-            {/* Root Comment Form */}
-            <form>
-                <div class="form-group">
-                    <input onChange={handleChange} name="comment" value={input.comment} autoComplete="off" 
-                        className="comment-form-textarea" placeholder="Insert Comment"/>
-                </div> 
-                <button  onClick={handleClick} className="comment-form-button"
-                     disabled={isTextareaDisabled}>Comment</button>
-            </form>
         </div>
     )
 }
