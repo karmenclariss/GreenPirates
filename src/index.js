@@ -42,6 +42,10 @@ ReactDOM.render(
       <Route path="/profile" element={<Profile />} />
       <Route path="/account" element={<Account />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/forum" element={<Forum />}/>
+        {/* <Route path="" element={<Posts />} />
+        <Route path=":postSlug" element={<Post />} /> */}
+      {/* </Route> */}
       <Route path="/notlogin" element={<NotLoggedIn/>} />
       <Route path="/forum" element={<Forum />}/>
         {/* <Route path="" element={<Posts />} />

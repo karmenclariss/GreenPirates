@@ -129,3 +129,13 @@ a:hover {
   margin: 0;
   color: gray;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+}

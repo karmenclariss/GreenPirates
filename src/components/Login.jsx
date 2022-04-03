@@ -4,7 +4,7 @@ import Profile from './forum/Profile';
 import NotLoggedIn from './forum/NotLoggedIn';
 //import { refreshTokenSetup } from '../utils/refreshTokenSetup';
 
-const clientId = '858483949458-3jg43uscn0isammqoqahek7jk6rvdf09.apps.googleusercontent.com';
+const clientId = process.env.REACT_APP_GOOGLE_LOGIN_CLIENTID;
 
 function Login(){
 

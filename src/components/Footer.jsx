@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div className="footer">
-      <footer class="py-5 bg-dark">
+      <footer class="py-2 bg-dark" >
         <div class="container">
           <p class="m-0 text-center text-white">
             Copyright &copy; Green Pirates Inc 2022
@@ -13,5 +13,11 @@ function Footer() {
     </div>
   );
 }
+
+// const Footer = () => (
+//   <div className="footer">
+//     <p>Copyright &copy; Green Pirates Inc 2022</p>
+//   </div>
+// );
 
 export default Footer;

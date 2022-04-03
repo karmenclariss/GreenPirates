@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 function SingleComment(props) {
 
-    useEffect(() => {
-        console.log("At the start", props.CommentLists.length)
-    }, [])
-    
-
     const [EditCommentValue, setEditCommentValue] = useState({
-        content:props.comment.comment
+        content:props.comment.comment,
     })
     const [CanEdit, setCanEdit] = useState(false)
     const [OpenReply, setOpenReply] = useState("")
@@ -32,6 +27,7 @@ function SingleComment(props) {
                 if(response.data.success){
                     setOpenReply(!OpenReply)
                     props.refreshFunction(response.data.result)
+                    // console.log(response)
                 }
                 else{
                     alert('Comment could not be posted')
@@ -63,6 +59,7 @@ function SingleComment(props) {
                 if(response.data.success){
                     alert("Comment has been successfully deleted")
                     props.deleteComment(props.comment)
+                    
                 }
                 else{
                     alert("There was an error deleting the comment")
