@@ -43,6 +43,28 @@ function Thread(){
     function updateComment(incomingComment){
         setCommentLists(CommentLists.concat(incomingComment))
     }
+
+    let index=0
+    function deleteComment(comment){
+        for (let i = 0; i<CommentLists.length; i++){
+            if(CommentLists[i]._id === comment._id){
+                index = i
+            }
+        }
+        setCommentLists(CommentLists.splice(index,1))
+    }
+
+    function editComment(comment){
+        for (let i = 0; i<CommentLists.length; i++){
+            if(CommentLists[i]._id === comment._id){
+                index = i
+            }
+        }
+        setCommentLists(CommentLists.splice(index,1))
+        setCommentLists(CommentLists.concat(comment))
+
+    }
+
     const content = {
         color: "black",
         padding: "8px",
@@ -53,11 +75,13 @@ function Thread(){
         padding: "8px",
         fontSize:"70px"
     };
+
     return(
+        
     <div class="container"> 
             <h2 style={title}>{data.title}</h2>
             <p style={content}>{data.content}</p>
-            <Comments CommentLists={CommentLists} refreshFunction={updateComment} />
+            <Comments CommentLists={CommentLists} refreshFunction={updateComment} deleteComment={deleteComment} editComment={editComment}/>
     </div>
     )
 }

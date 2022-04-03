@@ -5,6 +5,7 @@ const cors = require('cors')
 const thread = require('./routes/threadRoute')
 const comment = require('./routes/commentRoute')
 const user = require('./routes/userRoute')
+
 require('dotenv').config()
 mongoose.Promise = global.Promise
 dbURL = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.u079k.mongodb.net/forum-app?retryWrites=true&w=majority`

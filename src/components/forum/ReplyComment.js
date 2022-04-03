@@ -23,9 +23,9 @@ function ReplyComment(props) {
                 {comment.responseTo === parentCommentId && 
                     <div className='child-comment-width'>
                         <SingleComment CommentLists={props.CommentLists} comment={comment} threadId={props.threadId} 
-                            refreshFunction={props.refreshFunction}/>
+                            refreshFunction={props.refreshFunction} deleteComment={props.deleteComment} editComment={props.editComment} />
                         <ReplyComment CommentLists={props.CommentLists} parentCommentId={comment._id} threadId={props.threadId}
-                            refreshFunction={props.refreshFunction}/>
+                            refreshFunction={props.refreshFunction} deleteComment={props.deleteComment} editComment={props.editComment} />
                     </div>
                 }
             </React.Fragment>
