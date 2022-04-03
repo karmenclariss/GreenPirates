@@ -43,12 +43,21 @@ function Thread(){
     function updateComment(incomingComment){
         setCommentLists(CommentLists.concat(incomingComment))
     }
-
+    const content = {
+        color: "black",
+        padding: "8px",
+        fontSize:"30px"
+    };
+    const title = {
+        color: "black",
+        padding: "8px",
+        fontSize:"70px"
+    };
     return(
-    <div>
-        <h2>{data.title}</h2>
-        <p>{data.content}</p>
-        <Comments CommentLists={CommentLists} refreshFunction={updateComment} />
+    <div class="container"> 
+            <h2 style={title}>{data.title}</h2>
+            <p style={content}>{data.content}</p>
+            <Comments CommentLists={CommentLists} refreshFunction={updateComment} />
     </div>
     )
 }
