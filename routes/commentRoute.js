@@ -47,4 +47,29 @@ router.route('/getComment').post((req,res) =>{
         
 })
 
+router.route('/deleteComment').delete((req,res) =>{
+    Comment.deleteOne({_id: req.body.commentId})
+        .exec((err) =>{
+            if(err){
+                return res.json({success:false,err})
+            }
+            res.status(200).json({success:true})
+        })
+    
+})
+
+router.route('/updateComment').post((req,res) =>{
+    const filter = {_id: req.body.commentId}
+    const update = {comment: req.body.content}
+    Comment.findOneAndUpdate(filter,update)
+        .exec((err, data) =>{
+            if(err){
+                return res.json({success:false, err})
+            }
+            res.status(200).json({success:true, data})
+        })
+})
+
+
+
 module.exports = router

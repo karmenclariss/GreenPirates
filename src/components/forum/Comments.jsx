@@ -1,16 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import SingleComment from './SingleComment'
 import ReplyComment from './ReplyComment'
 
 function Comments(props) {
-
-
-    useEffect(() => {
-      
-    }, [])
-    
     const {id} = useParams()
     const [input,setInput] = useState({
     comment:''
@@ -38,24 +32,25 @@ function Comments(props) {
                 props.refreshFunction(response.data.result)
             }
             else{
-                console.log('Failed to save comment')
+                alert('Failed to save comment')
             }
         })
-
+        
     }
 
     return(
         <div>
             <br/>
             <p className='thread-form-title'> Comments </p>
-            {console.log(props.CommentLists)}
-
             {props.CommentLists && props.CommentLists.map((comment,index) => (
             (!comment.responseTo && 
                 <React.Fragment>
-                    <SingleComment comment={comment} threadId={id} refreshFunction={props.refreshFunction}/>
-                    <ReplyComment CommentLists={props.CommentLists} parentCommentId={comment._id} threadId={id}
-                        refreshFunction={props.refreshFunction} />
+                    <div className="parent-comment-width">
+                        <SingleComment CommentLists={props.CommentLists} comment={comment} threadId={id} 
+                            refreshFunction={props.refreshFunction}/>
+                        <ReplyComment CommentLists={props.CommentLists} parentCommentId={comment._id} threadId={id}
+                            refreshFunction={props.refreshFunction}/>
+                    </div>
                 </React.Fragment>
             )))}
 

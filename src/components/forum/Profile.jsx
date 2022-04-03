@@ -19,8 +19,8 @@ function Profile(props) {
             />
           </div>
           <div class="col-lg-6">
-            <h1 class="font-weight-bold">Profile</h1>
-            <h2 class="font-weight-light">{props.name}</h2>
+        
+            <h2 class="font-weight-bold">{props.name}</h2>
             <h4 class="font-weight-light">{props.email}</h4>
             <NavLink className="nav-link" to="/account">
                   <Button>EDIT ACCOUNT</Button>

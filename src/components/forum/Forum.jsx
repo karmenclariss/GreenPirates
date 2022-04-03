@@ -50,9 +50,9 @@ function Forum(){
         {currentPosts.map((thread) =>(
 
             <div key={String(thread._id)}>
-              <h3 style ={{fontFamily:'Arial',fontWeight:'bold'}}> 
+              <h4 style ={{fontFamily:'Arial',fontWeight:'bold'}}> 
                 <Link to={`/thread/${String(thread._id)}`}>{thread.title}</Link>
-              </h3>
+              </h4>
                 <p>{thread.content}</p>
             </div>
         ))}
