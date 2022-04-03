@@ -5,6 +5,8 @@ const cors = require('cors')
 const thread = require('./routes/threadRoute')
 const comment = require('./routes/commentRoute')
 const user = require('./routes/userRoute')
+const path = require('path')
+
 require('dotenv').config()
 mongoose.Promise = global.Promise
 dbURL = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.u079k.mongodb.net/forum-app?retryWrites=true&w=majority`
@@ -17,6 +19,15 @@ app.use(express.json()) //parse the request coming from the front-end
 app.use('/api/thread', thread)
 app.use('/api/comment', comment)
 app.use('/api/user', user)
+
+
+if(process.env.NODE_ENV === 'production'){
+        //Set Static folder
+        app.use(express.static('GreenPirates/build'))
+        app.get('*', (req,res) =>{
+                res.sendFile(path.resolve(__dirname, 'GreenPirates', 'build', 'index.html'))
+        })
+}
 
 
 app.listen(3001, () =>{

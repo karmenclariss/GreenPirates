@@ -34,7 +34,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix GreenPirates && npm run build --prefix GreenPirates"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
