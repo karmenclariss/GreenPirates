@@ -26,17 +26,20 @@ function Filter() {
 
            
                   <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '10vh'}}>
-                    <ul><Button>Recycling old products</Button></ul>
+                    {/* <ul><Button>Recycling old products</Button></ul> */}
+                    <NavLink className="nav-link" to="/map2ndhand" ><ul><Button>Recycling old products</Button></ul></NavLink>
                   </div> 
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
-                    <ul><Button >Recycling e-waste</Button></ul>
+                    {/* <ul><Button >Recycling e-waste</Button></ul> */}
+                    <NavLink className="nav-link" to="/mapewaste" ><ul><Button>Recycling e-waste</Button></ul></NavLink>
                   </div>
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
-                    <ul><Button>Recycling lighting waste</Button></ul>
+                    {/* <ul><Button>Recycling lighting waste</Button></ul> */}
+                    <NavLink className="nav-link" to="/maplwaste" ><ul><Button>Recycling lighting waste</Button></ul></NavLink>
                   </div> 
-                  <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
+                  {/* <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
                     <ul><NavLink className="nav-link" to="/start2"><Button2>Next</Button2></NavLink></ul>
-                  </div> 
+                  </div>  */}
 
                   <div style={{display: 'flex',justifyContent:'center', alignItems:'center', height: '10vh'}}>
                     <ul><NavLink className="nav-link" to="/browse" >Or find out more </NavLink></ul>
