@@ -30,12 +30,12 @@ function Comments(props) {
          .then((response)=>{
             if(response.data.success){
                 props.refreshFunction(response.data.result)
+                
             }
             else{
                 alert('Failed to save comment')
             }
         })
-        
     }
 
     return(
@@ -47,9 +47,9 @@ function Comments(props) {
                 <React.Fragment>
                     <div className="parent-comment-width">
                         <SingleComment CommentLists={props.CommentLists} comment={comment} threadId={id} 
-                            refreshFunction={props.refreshFunction}/>
+                            refreshFunction={props.refreshFunction} deleteComment={props.deleteComment} editComment={props.editComment} />
                         <ReplyComment CommentLists={props.CommentLists} parentCommentId={comment._id} threadId={id}
-                            refreshFunction={props.refreshFunction}/>
+                            refreshFunction={props.refreshFunction} deleteComment={props.deleteComment} editComment={props.editComment} />
                     </div>
                 </React.Fragment>
             )))}

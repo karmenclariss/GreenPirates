@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function SingleComment(props) {
+
+    useEffect(() => {
+        console.log("At the start", props.CommentLists.length)
+    }, [])
+    
+
     const [EditCommentValue, setEditCommentValue] = useState({
         content:props.comment.comment
     })
@@ -48,18 +54,6 @@ function SingleComment(props) {
         setOpenReply(!OpenReply)
     }
     
-    let index=0
-    function deleteComment(comment){
-        for (let i = 0; i<props.CommentLists.length; i++){
-            if(props.CommentLists[i]._id === comment._id){
-                index = i
-            }
-        }
-        console.log("Before splice length", props.CommentLists.length)
-        props.CommentLists.splice(index,1)
-        console.log("After splice length", props.CommentLists.length)
-    }
-
     function deleteReply(event){
         event.preventDefault()
         axios.delete('http://localhost:3001/api/comment/deleteComment', {data: {
@@ -68,12 +62,13 @@ function SingleComment(props) {
             .then((response) =>{
                 if(response.data.success){
                     alert("Comment has been successfully deleted")
+                    props.deleteComment(props.comment)
                 }
                 else{
                     alert("There was an error deleting the comment")
                 }
             })
-        deleteComment(props.comment)
+        
     }
 
     function editComment(event){
@@ -96,6 +91,8 @@ function SingleComment(props) {
             .then((response) => {
                 if(response.data.success){
                     alert("Comment edited successfully")
+                    props.editComment(props.comment)
+                    
                 }
                 else{
                     alert("Comment edit failed")
@@ -112,6 +109,7 @@ function SingleComment(props) {
     return (
         
         <div>
+            
             <div>{props.comment.comment}</div>
             <div className='comment-actions'>
                         <div onClick={enableReply} className="comment-action">Reply</div>
