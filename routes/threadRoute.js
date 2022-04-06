@@ -6,9 +6,13 @@ const Thread = require('../models/threadModel')
 router.route('/createThread').post((req,res) =>{    
     const title = req.body.title
     const content = req.body.content
+    const user = req.body.user
+    const userID = req.body.userID
     const newThread = new Thread({
         title,
-        content
+        content,
+        userID,
+        user
     })
     newThread.save()
 })

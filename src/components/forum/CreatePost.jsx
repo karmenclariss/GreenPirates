@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
 import axios from "axios"
 import {useNavigate} from "react-router-dom";
-function CreatePost(){
+import {UserContext} from "../UserContext";
 
+function CreatePost(){
+    const {User} = useContext(UserContext);
     let navigate = useNavigate()
     const [input, setInput] = useState({ //will track the two fields, title and content
         title:'',
@@ -24,7 +26,9 @@ function CreatePost(){
         event.preventDefault();
         const newThread = {
             title: input.title,
-            content: input.content
+            content: input.content,
+            userID: User.googleId,
+            user: User.name
         }
         axios.post('http://localhost:3001/api/thread/createThread', newThread)
         navigate('/forum')

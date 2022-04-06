@@ -14,6 +14,14 @@ const commentSchema = new Schema({
     responseTo:{
         type: mongoose.Schema.ObjectId,
         ref: "Comment"
+    }, 
+    userID:{
+        type: Number,
+        require: true
+    },
+    user:{
+        type: String,
+        require: true
     }
 },{timestamps: true })
 
