@@ -36,7 +36,7 @@ function Login(){
     };
     
     return (
-        <div>
+        <div className="login">
             <div class="container">
                  <div style={{display: 'flex', justifyContent:'center', alignItems:'center', height: '20vh'}}>
                 <h1 class="font-weight-light">Profile</h1>
