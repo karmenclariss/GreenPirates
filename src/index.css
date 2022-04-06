@@ -131,11 +131,22 @@ a:hover {
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: relative;
+  bottom: 0;
   width: 100%;
   background-color: grey;
   color: white;
   text-align: center;
+}
+
+.contact {
+  height: 90vh;
+}
+
+.login {
+  height: 90vh;
+}
+
+.browse {
+  min-height: 90vh;
 }
