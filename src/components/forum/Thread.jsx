@@ -9,7 +9,8 @@ function Thread(){
     const [CommentLists,setCommentLists] = useState([])
     const [data,setData] = useState({
         title:'',
-        content:''
+        content:'',
+        user:''
     })
     const threadId = {
         threadId:id
@@ -24,7 +25,8 @@ function Thread(){
          .then((foundThread) => {
              let text = {
                  title: foundThread.title,
-                 content: foundThread.content
+                 content: foundThread.content,
+                 user: foundThread.user
              }
              setData(text)
          })
@@ -76,9 +78,15 @@ function Thread(){
         fontSize:"70px"
     };
 
+    const userName = {
+        color: "black",
+        fontSize:"15px"
+    }
+
     return(
         
     <div class="container"> 
+            <h2 style={userName}>Posted by: {data.user}</h2>
             <h2 style={title}>{data.title}</h2>
             <p style={content}>{data.content}</p>
             <Comments CommentLists={CommentLists} refreshFunction={updateComment} deleteComment={deleteComment} editComment={editComment}/>

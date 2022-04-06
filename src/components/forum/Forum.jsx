@@ -1,14 +1,11 @@
-import React, {useState, useEffect , useContext} from "react"; //To handle change, need to track the state of the input
+import React, {useState, useEffect } from "react"; //To handle change, need to track the state of the input
 import {Link} from "react-router-dom";
 import Pagination from './Pagination';
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import {UserContext} from "../UserContext";
 
 function Forum(){
 
-    const {User} = useContext(UserContext);
-    console.log("Logged in user is: ", User);
     const [threads, setThreads] = useState([{
         title:'',
         content:''

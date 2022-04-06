@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
+import {UserContext} from '../UserContext'
 
 function SingleComment(props) {
 
+    const {User} = useContext(UserContext)
     const [EditCommentValue, setEditCommentValue] = useState({
         content:props.comment.comment,
     })
@@ -12,14 +14,15 @@ function SingleComment(props) {
         content:'',
     })
     const isTextareaDisabled = CommentValue.content.length===0
-   
 
     function handleClick(event){
         event.preventDefault()
         const variable ={
             comment:CommentValue.content,
             threadId:props.threadId,
-            responseTo:props.comment._id
+            responseTo:props.comment._id,
+            userID: User.googleId,
+            user: User.name
         }
         
         axios.post('http://localhost:3001/api/comment/createComment', variable)
@@ -27,7 +30,6 @@ function SingleComment(props) {
                 if(response.data.success){
                     setOpenReply(!OpenReply)
                     props.refreshFunction(response.data.result)
-                    // console.log(response)
                 }
                 else{
                     alert('Comment could not be posted')
@@ -103,15 +105,23 @@ function SingleComment(props) {
         setCanEdit(!CanEdit)
     }
 
+    const userName = {
+        color: "black",
+        fontSize:"15px"
+    }
+
     return (
         
         <div>
-            
-            <div>{props.comment.comment}</div>
+            {console.log(Number(User.googleId))}
+            <h3 style={userName}>{props.comment.user}: </h3>
+            <h2>{props.comment.comment}</h2>
             <div className='comment-actions'>
                         <div onClick={enableReply} className="comment-action">Reply</div>
-                        <div onClick={editReply} className="comment-action">Edit</div>
-                        <div onClick={deleteReply} className="comment-action">Delete</div>
+                        <div onClick={editReply} className="comment-action" 
+                            style={{visibility: props.comment.user ===  User.name ? "visible" : "hidden"}}  >Edit</div>
+                        <div onClick={deleteReply} className="comment-action" 
+                            style={{visibility: props.comment.user ===  User.name ? "visible" : "hidden"}} >Delete</div>
             </div>
             {OpenReply && (
             <form>

@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
 import SingleComment from './SingleComment'
 import ReplyComment from './ReplyComment'
+import {UserContext} from '../UserContext'
 
 function Comments(props) {
+    const {User} = useContext(UserContext)
     const {id} = useParams()
     const [input,setInput] = useState({
     comment:''
@@ -25,6 +27,8 @@ function Comments(props) {
         const newComment = {
             comment: input.comment,
             threadId: id,
+            userID: User.googleId,
+            user: User.name
         }
         axios.post('http://localhost:3001/api/comment/createComment', newComment)
          .then((response)=>{

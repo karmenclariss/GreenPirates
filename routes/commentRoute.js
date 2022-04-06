@@ -7,19 +7,25 @@ router.route('/createComment').post((req,res) =>{
     let newComment = new Comment()
     const threadId = req.body.threadId
     const comment = req.body.comment
+    const userID = req.body.userID
+    const user = req.body.user
     if(req.body.responseTo){
         
         const responseTo = req.body.responseTo
         newComment = Comment({
             comment,
             threadId,
-            responseTo
+            responseTo,
+            userID,
+            user
         })
     }
     else{
         newComment = Comment({
             comment,
-            threadId
+            threadId,
+            userID,
+            user
         })
     }
     console.log(`The new comment is ${newComment}`)

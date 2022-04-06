@@ -10,6 +10,16 @@ const threadSchema = new Schema({
         type: String,
         require: true
     },
+
+    userID: {
+        type: Number,
+        require: true
+    },
+    user:{
+        type: String,
+        require: true
+    }
+
 },{timestamps: true })
 
 const Thread = mongoose.model('Thread', threadSchema)
