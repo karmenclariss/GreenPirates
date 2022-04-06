@@ -134,7 +134,7 @@ export default function Map() {
                 position={{ lat: yourLatitude, lng: yourLongitude }}
             /> */}
 
-            {ewastes.map(ewaste => (
+            {/* {ewastes.map(ewaste => (
                 <Marker
                     key={ewaste.properties.Name}
                     position={{
@@ -149,7 +149,12 @@ export default function Map() {
                         setSelectedPoint(ewaste);
                     }}
                 />
-            ))}
+            ))} */}
+
+            <KmlLayer
+                url="https://geo.data.gov.sg/ewaste/2021/09/24/kml/ewaste.kml"
+                options={{ preserveViewport: true }}
+            />
 
             {/* {lightings.map(lighting => (
                 <Marker
