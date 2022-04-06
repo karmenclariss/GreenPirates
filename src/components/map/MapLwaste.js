@@ -125,7 +125,7 @@ export default function Map() {
             {markers.map(marker => (
                 <Marker
                     key={marker.lat}
-                    position={{lat: marker.lat, lng: marker.lng}}
+                    position={{ lat: marker.lat, lng: marker.lng }}
                 />
             ))}
 
@@ -151,7 +151,7 @@ export default function Map() {
                 />
             ))} */}
 
-            {lightings.map(lighting => (
+            {/* {lightings.map(lighting => (
                 <Marker
                     key={lighting.properties.Name}
                     position={{
@@ -166,7 +166,12 @@ export default function Map() {
                         setSelectedPoint(lighting);
                     }}
                 />
-            ))}
+            ))} */}
+
+            <KmlLayer
+                url="https://geo.data.gov.sg/lighting/2019/10/01/kml/lighting.kml"
+                options={{ preserveViewport: true }}
+            />
 
             {selectedPoint && (
                 <InfoWindow
