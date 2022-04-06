@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import Profile from './forum/Profile';
 import NotLoggedIn from './forum/NotLoggedIn';
 //import { refreshTokenSetup } from '../utils/refreshTokenSetup';
+import { UserContext } from './UserContext';
 
 const clientId = process.env.REACT_APP_GOOGLE_LOGIN_CLIENTID;
 
 function Login(){
 
+    const {User, setUser} = useContext(UserContext);
     const[showLoginButton, setShowLoginButton]= useState(true);
     const[showLogoutButton, setShowLogoutButton] = useState(false);
     const[name,setName] = useState('');
@@ -18,6 +20,7 @@ function Login(){
         console.log('[Login Success] currentUser:', res.profileObj);
         setShowLoginButton(false);
         setShowLogoutButton(true);
+        setUser(res.profileObj);
         setName(res.profileObj.name);
         setPhoto(res.profileObj.imageUrl);
         setEmail(res.profileObj.email);
@@ -56,7 +59,7 @@ function Login(){
                     cookiePolicy={'single_host origin'}
                     style={{ marginTop: '100px' }}
                     isSignedIn={true}
-                /> 
+                />
                 </div>
                 : null
             }
@@ -73,12 +76,8 @@ function Login(){
                 </GoogleLogout> 
                 </div>
                 :null
-            } 
-
+            }
         </div>
-        
-        
-
     );
     
 };
