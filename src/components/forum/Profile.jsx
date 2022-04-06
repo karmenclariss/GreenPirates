@@ -5,8 +5,6 @@ import styled from "styled-components";
 
 
 function Profile(props) {
-  console.log(props.profileObj);
-  console.log(props.hello);
   return (
     <div className="about">
       <div class="container">
