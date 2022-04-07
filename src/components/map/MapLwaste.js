@@ -42,7 +42,7 @@ import React, { useState } from "react";
 // import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 import { GoogleMap, useLoadScript, Marker, InfoWindow, KmlLayer, MarkerClusterer } from "@react-google-maps/api";
 // import * as ewasteData from "./e-waste-recycling-geojson.json";
-import * as lightingData from "./lighting-waste-collection-points-geojson.json";
+// import * as lightingData from "./lighting-waste-collection-points-geojson.json";
 import mapStyles from "./mapStyles";
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
@@ -72,8 +72,8 @@ const options = {
 
 
 // Lighting-waste DataSet
-var { features } = lightingData;
-const lightings = features;
+// var { features } = lightingData;
+// const lightings = features;
 
 // Location of your computer
 var yourLatitude;

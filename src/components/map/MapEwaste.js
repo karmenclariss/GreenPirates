@@ -41,7 +41,7 @@
 import React, { useState } from "react";
 // import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
 import { GoogleMap, useLoadScript, Marker, InfoWindow, KmlLayer, MarkerClusterer } from "@react-google-maps/api";
-import * as ewasteData from "./e-waste-recycling-geojson.json";
+// import * as ewasteData from "./e-waste-recycling-geojson.json";
 // import * as lightingData from "./lighting-waste-collection-points-geojson.json";
 import mapStyles from "./mapStyles";
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
@@ -65,8 +65,8 @@ const options = {
 }
 
 // E-waste DataSet
-var { features } = ewasteData;
-const ewastes = features;
+// var { features } = ewasteData;
+// const ewastes = features;
 // console.log(features[0].geometry.coordinates[0]);
 // console.log(features[0].geometry.coordinates[1]);
 
