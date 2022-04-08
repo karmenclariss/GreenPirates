@@ -131,7 +131,7 @@ a:hover {
 }
 
 .footer {
-  position: stickyy;
+  position: sticky;
   bottom: 0;
   width: 100%;
   background-color: grey;
